@@ -76,14 +76,6 @@ public class AptNormalTaskListener<TASK extends ITask> implements NormalTaskList
 
   }
 
-  /**
-   * 任务失败
-   *
-   * @deprecated {@link #onTaskFail(ITask, Exception)}
-   */
-  public void onTaskFail(TASK task) {
-
-  }
 
   /**
    * 任务失败

@@ -5,8 +5,20 @@ plugins {
 }
 
 android {
+
+  namespace "com.lyy.frame"
   compileSdkVersion rootProject.ext.compileSdkVersion
   buildToolsVersion rootProject.ext.buildToolsVersion
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17 // 统一 Java 编译版本
+    targetCompatibility JavaVersion.VERSION_17
+  }
+
+  kotlinOptions {
+    jvmTarget = "17"
+  }
+
 
   defaultConfig {
     minSdkVersion rootProject.ext.minSdkVersion
@@ -37,21 +49,21 @@ dependencies {
   androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
-  testImplementation 'junit:junit:4.12'
+  testImplementation 'junit:junit:4.13.2'
   api "androidx.appcompat:appcompat:${rootProject.ext.XAppcompatVersion}"
-  api 'com.google.code.gson:gson:2.8.2'
-  api 'io.reactivex:rxandroid:1.2.0'
-  api 'io.reactivex:rxjava:1.1.5'
-  implementation 'com.squareup.okhttp3:okhttp:3.10.0'
-  implementation 'com.squareup.retrofit2:retrofit:2.1.0'
-  implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-  implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
-  implementation 'com.squareup.okhttp3:logging-interceptor:3.2.0'
+  api 'com.google.code.gson:gson:2.13.1'
+  api 'io.reactivex:rxandroid:1.2.1'
+  api 'io.reactivex:rxjava:1.3.8'
+  implementation 'com.squareup.okhttp3:okhttp:5.1.0'
+  implementation 'com.squareup.retrofit2:retrofit:3.0.0'
+  implementation 'com.squareup.retrofit2:adapter-rxjava:3.0.0'
+  implementation 'com.squareup.retrofit2:converter-gson:3.0.0'
+  implementation 'com.squareup.okhttp3:logging-interceptor:5.1.0'
   implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
   implementation 'androidx.multidex:multidex:2.0.1'
 
-  api 'androidx.lifecycle:lifecycle-runtime:2.0.0'
-  api 'androidx.lifecycle:lifecycle-extensions:2.0.0'
-  kapt 'androidx.lifecycle:lifecycle-compiler:2.0.0'
+  api 'androidx.lifecycle:lifecycle-runtime:2.9.2'
+  api 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+  kapt 'androidx.lifecycle:lifecycle-compiler:2.9.2'
 
 }

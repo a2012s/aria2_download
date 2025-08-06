@@ -137,19 +137,20 @@ import java.util.List;
 
   @Override
   public void onClick(View view) {
-    switch (view.getId()) {
-      case R.id.start:
+    int viewId = view.getId();
+    if (viewId == R.id.start) {
         Aria.download(getContext())
             .loadGroup(mUrls)
             .getSubTaskManager()
             .startSubTask(mChildEntity.getUrl());
-        break;
-      case R.id.stop:
+
+    //  case R.id.stop:
+    } else if (viewId == R.id.stop) {
         Aria.download(getContext())
             .loadGroup(mUrls)
             .getSubTaskManager()
             .stopSubTask(mChildEntity.getUrl());
-        break;
+      
       //case R.id.cancel:
       //  Aria.download(this).load(mUrls).getSubTaskManager().cancelSubTask(mChildEntity.getUrl());
       //  break;

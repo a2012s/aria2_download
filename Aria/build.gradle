@@ -1,8 +1,15 @@
 apply plugin: 'com.android.library'
 
 android {
+  namespace "com.arialyy.aria"
   compileSdkVersion rootProject.ext.compileSdkVersion
   buildToolsVersion rootProject.ext.buildToolsVersion
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17 // 统一 Java 编译版本
+    targetCompatibility JavaVersion.VERSION_17
+  }
+
 
   defaultConfig {
     minSdkVersion rootProject.ext.minSdkVersion
@@ -25,7 +32,7 @@ android {
 }
 dependencies {
   implementation fileTree(include: ['*.jar'], dir: 'libs')
-  testImplementation 'junit:junit:4.12'
+  testImplementation 'junit:junit:4.13.2'
 //  implementation "androidx.appcompat:appcompat:${rootProject.ext.XAppcompatVersion}"
   api project(path: ':AriaAnnotations')
   api project(path: ':PublicComponent')

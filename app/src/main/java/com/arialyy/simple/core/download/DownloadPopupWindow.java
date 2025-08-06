@@ -84,15 +84,15 @@ public class DownloadPopupWindow extends AbsPopupWindow implements View.OnClickL
 
   @Override
   public void onClick(View view) {
-    switch (view.getId()) {
-      case R.id.start:
+    int viewId = view.getId();
+    if (viewId == R.id.start) {
         if (mTaskId != -1) {
           Aria.download(this)
               .load(DOWNLOAD_URL)
               .setFilePath(Environment.getExternalStorageDirectory().getPath() + "/消消乐.apk")
               .create();
           mStart.setText(getContext().getString(R.string.stop));
-          break;
+
         }
         if (Aria.download(this).load(mTaskId).isRunning()) {
           Aria.download(this).load(mTaskId).stop();
@@ -101,14 +101,14 @@ public class DownloadPopupWindow extends AbsPopupWindow implements View.OnClickL
           Aria.download(this).load(mTaskId).resume();
           mStart.setText(getContext().getString(R.string.stop));
         }
-        break;
 
-      case R.id.cancel:
 
-        Aria.download(this).load(mTaskId).cancel();
-        mStart.setText(getContext().getResources().getString(R.string.start));
-        mTaskId = -1;
-        break;
+    } else if (viewId == R.id.cancel) {
+
+      Aria.download(this).load(mTaskId).cancel();
+      mStart.setText(getContext().getResources().getString(R.string.start));
+      mTaskId = -1;
+
     }
   }
 

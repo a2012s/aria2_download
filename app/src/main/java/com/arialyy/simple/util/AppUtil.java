@@ -27,9 +27,11 @@ import androidx.core.content.FileProvider;
 import com.arialyy.aria.core.common.AbsEntity;
 import com.arialyy.aria.util.ALog;
 import com.arialyy.aria.util.FileUtil;
-import com.arialyy.simple.BuildConfig;
+
 import java.io.File;
 import java.io.IOException;
+
+import rx.android.BuildConfig;
 
 public class AppUtil {
   private static final String TAG = "AppUtil";

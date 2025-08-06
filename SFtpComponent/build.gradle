@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 
 android {
+  namespace "com.arialyy.aria.sftp"
   compileSdkVersion rootProject.ext.compileSdkVersion
   buildToolsVersion rootProject.ext.buildToolsVersion
 
